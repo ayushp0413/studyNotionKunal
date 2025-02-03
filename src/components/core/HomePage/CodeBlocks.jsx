@@ -3,7 +3,6 @@ import CTAButton from "./CTAButton";
 import { TypeAnimation } from "react-type-animation";
 import { FaArrowRight } from "react-icons/fa";
 
-
 const CodeBlocks = ({
   position,
   heading,
