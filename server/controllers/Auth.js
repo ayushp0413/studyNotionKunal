@@ -181,11 +181,12 @@ exports.login = async (req, res) => {
 // Send OTP For Email Verification
 exports.sendotp = async (req, res) => {
 	try {
-		const { email } = req.body;
+		const { email } = req?.body;
+		console.log("EMAIL at send otp :", email);
 
 		// Check if user is already present
 		// Find user with provided email
-		const checkUserPresent = await User.findOne({ email });
+		const checkUserPresent = await User.findOne({email: email });
 		// to be used in case of signup
 
 		// If user found with provided email

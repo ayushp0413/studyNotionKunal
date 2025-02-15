@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast"
 import { setLoading, setToken } from "../../slices/authSlice"
 import { resetCart } from "../../slices/cartSlice"
 import { setUser } from "../../slices/profileSlice"
-import { apiConnector } from "../apiconnector"
+import { apiConnector } from "../apiConnector"
 import { endpoints } from "../apis"
 
 const {
@@ -17,7 +17,10 @@ const {
 export function sendOtp(email, navigate) {
   return async (dispatch) => {
     const toastId = toast.loading("Loading...")
-    dispatch(setLoading(true))
+
+    console.log("APIS: SEND OTP : ", email);
+
+    dispatch(setLoading(true));
     try {
       const response = await apiConnector("POST", SENDOTP_API, {
         email,
